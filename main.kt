@@ -93,7 +93,7 @@ data class HttpRequest(
                     val (key, value) = line.split(": ")
                     headers[key] = value
                 } else if (line.isEmpty()) {
-
+                    // do nothing
                 } else {
                     body = line
                 }
