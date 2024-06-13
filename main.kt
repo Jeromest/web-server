@@ -46,7 +46,7 @@ class Router {
             } ?: let {
                 writer.write(
                     HttpResponse(
-                        Version.HTTP_1_0,
+                        Version.HTTP_1_1,
                         404,
                         "404 Not Found",
                         headers = mapOf("content-type" to "text/html"),
@@ -55,7 +55,7 @@ class Router {
                 )
                 writer.flush()
             }
-            socket.close()
+            client.close()
         }
     }
 }
