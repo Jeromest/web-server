@@ -48,7 +48,7 @@ class Router {
                     HttpResponse(
                         Version.HTTP_1_1,
                         404,
-                        "404 Not Found",
+                        "Not Found",
                         headers = mapOf("content-type" to "text/html"),
                         body = "<h1>404 Not Found</h1>"
                     ).toString()
@@ -108,7 +108,7 @@ data class HttpResponse(
     val statusCode: Int,
     val statusText: String,
     val headers: Map<String, String> = emptyMap(),
-    val body: String = ""
+    val body: String? = ""
 ) {
     override fun toString(): String {
         return """
